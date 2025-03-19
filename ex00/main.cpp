@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:11:08 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/14 15:00:01 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/19 22:24:24 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main(void)
 {
     ClapTrap soldier1("soldier1");
+    ClapTrap soldier2;
 
     std::cout << "----- start -----\n";
     soldier1.attack("enemy");
