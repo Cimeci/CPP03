@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:02:44 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/14 18:20:50 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/19 22:04:52 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ScavTrap::~ScavTrap(){
 }
 
 void	ScavTrap::attack(const std::string& target){
-	if (energyPoint > 0)
+	if (energyPoint > 0 && hitPoint > 0)
 	{
 		std::cout << RED <<"ScavTrap " << name <<" attacks " << target << ", causing " << attackDamage << " points of damage!\n" << RESET;
 		energyPoint--;

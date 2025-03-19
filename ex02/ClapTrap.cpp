@@ -6,18 +6,17 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 11:25:23 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/14 14:29:07 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/19 21:57:05 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name): hitPoint(10), energyPoint(10), attackDamage(0){
-	this->name = name;
+ClapTrap::ClapTrap(std::string name): hitPoint(10), energyPoint(10), attackDamage(0), name(name){
 	std::cout << "ClapTrap creat\n";
 };
 
-ClapTrap::ClapTrap(): hitPoint(10), energyPoint(10), attackDamage(0){
+ClapTrap::ClapTrap(): hitPoint(10), energyPoint(10), attackDamage(0), name("default"){
 }
 
 ClapTrap::ClapTrap(const ClapTrap &cp){
@@ -39,7 +38,7 @@ ClapTrap::~ClapTrap(){
 }
 
 void	ClapTrap::attack(const std::string& target){
-	if (energyPoint > 0)
+	if (energyPoint > 0 && hitPoint > 0)
 	{
 		std::cout << RED <<"ClapTrap " << name <<" attacks " << target << ", causing " << attackDamage << " points of damage!\n" << RESET;
 		energyPoint--;
@@ -47,13 +46,18 @@ void	ClapTrap::attack(const std::string& target){
 }
 
 void	ClapTrap::takeDamage(unsigned int amount){
+	if (hitPoint > 0)
+	{
 		std::cout << YELLOW << "ClapTrap " << name << " with " << hitPoint << " hit point take " << amount << " points of damages\n";
 		hitPoint -= amount;
 		std::cout << "ClapTrap " << name << " drop to " << hitPoint << " hit point\n" << RESET;
+	}
+	else
+		std::cout << YELLOW << "Stop the harassment\n" << RESET;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount){
-	if (energyPoint > 0)
+	if (energyPoint > 0 && hitPoint > 0)
 	{
 		std::cout << GREEN << "ClapTrap " << name << " repair " << amount << " hit point!\n";
 		hitPoint += amount;
