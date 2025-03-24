@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:02:44 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/19 22:04:13 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:45:44 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
 };
 
 ScavTrap::ScavTrap() : ClapTrap(){
+    hitPoint = 100;
+    energyPoint = 50;
+    attackDamage = 20;
     std::cout << "ScavTrap called Claptrap constructor\n";
 }
 

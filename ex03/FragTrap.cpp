@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:52:17 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/19 22:04:43 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:46:25 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
 };
 
 FragTrap::FragTrap() : ClapTrap(){
+    hitPoint = 100;
+    energyPoint = 100;
+    attackDamage = 30;
     std::cout << "FragTrap called Claptrap constructor\n";
 }
 

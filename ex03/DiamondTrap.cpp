@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 15:28:20 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/15 09:40:03 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:46:13 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), ScavT
 };
 
 DiamondTrap::DiamondTrap() : ClapTrap(){
+    hitPoint = FragTrap::hitPoint; // 100 
+    attackDamage = FragTrap::attackDamage; // 30
+    energyPoint = ScavTrap::energyPoint; // 50
     std::cout << "DiamondTrap called Claptrap constructor\n";
 }
 
